@@ -1,0 +1,47 @@
+package main
+
+import ("fmt"
+	"github.com/veandco/go-sdl2/sdl")
+
+//CONSTANTS
+const (
+	screenwidth = 600
+	screenheight = 800
+)
+//
+
+func main() {
+	//initialize sdl
+	if err := sdl.Init(sdl.INIT_EVERYTHING); err != nil {
+		fmt.Println("Initializing SDL:",err)
+		return//discontinue out
+	}
+
+	//create window
+	window, err := sdl.CreateWindow(
+		"Gaming in Go - Epsiode 2.",//window title
+		sdl.WINDOWPOS_UNDEFINED,//window position
+		sdl.WINDOWPOS_UNDEFINED,//window position
+		screenwidth,//window width
+		screenheight,//window height
+		sdl.WINDOW_OPENGL)//open gl accelerated window -flag
+	if err!=nil {
+		fmt.Println("Initializing Window:",err)
+		return
+	}
+	defer window.Destroy()//runs when main returns//resource management stategy
+	//create an sdl renderer - something that exist in the window - that we can draw on top of
+	renderer, err := sdl.CreateRenderer(window,-1,sdl.RENDERER_ACCELERATED)//givewindowtoputrendererin-tellrendereri wanttobeaccelerated
+	if err!=nil {
+		fmt.Println("Initializing Renderer:",err)
+		return//return to main
+	}
+	defer renderer.Destroy()//destroy renderer when we are done with it
+	for {//infinite for loop will keep the window displaying - inside the infinite for -src code</...>
+		renderer.SetDrawColor(255,255,255,255)//set the back ground color
+		renderer.Clear()//fill window with draw color
+
+		render.Present()
+	}
+}
+

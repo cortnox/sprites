@@ -1,0 +1,50 @@
+
+/*/
+we wnat to break this OOP code approach and convert it into a COP approach - 
+
+as one may see we have created sperate object representations of - of Creating types of differents kinds that represent different objects
+
+Because we begin to notice that as we keep adding more objects into our code we start to notice tha alot of portions of code can be reused. - because we see that alot of it is repeated - such as render sprite per different object
+
+We want  to change the archictecture so that players are not pecieved as things - but rather as things with components that make it that thing.
+
+components like moving and shooting which can be attached to the player. 
+
+
+This approach is still considered OOP but this is a rather much more Intrinsic and Granualer form of OOP where we are not just defing such an object 
+but we defining nut bolts and reusable parts that put the object into it form and so that it can do exaclty what it was programmed to do.
+
+In a component based architecture you make types or components based on individual pieces of reusable functionalty - we put parts together in a convenient way to make it functional and reusable
+
+So a Player will be a thing but not everything will revolve around the player the player will be a thing attached to a bunch of components 
+- and each component gives the thing some functionality while other differnet elements are also still able to use the same copmoonent functionality
+/*/
+
+Such a player in a game is an element : that:
+gets put on screen
+moves when player hits direction keys
+shoots when hitting space
+//gets followed when spotted by enemies
+//gets shot at in enemy line of sight / detection
+//gets hurt when getting shot by enemy bullets
+//gets stronger/faster when killing more enemies
+//gets killed if hit by enough enemy bullets
+
+these would be different components that make up the player based on their functionality
+
+Plyer is not identified by its even though it is a Type bute it is defined by what components make it a a player.
+
+What IS a component?
+
+a component can be just about ANYTHING
+
+In programming terms it is known as an interface.
+
+so ce created ne typ element contain preliminatrty shared inf that every elem in game wil need
+position , rotation, active, []component
+
+xccreaed method that magae components
+
+so now that weve focused a bit on component architecture
+its time to have a look at collision detectcion
+
